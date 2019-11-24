@@ -1,0 +1,24 @@
+{% from "macros.html" import render_field %}
+
+{% extends "base.html" %}
+
+
+{% block content %}
+    <section class="container-center">
+        <form method="POST" action="">
+            <div class="page-header">
+                <h1>Atualizar Cliente</h1>
+            </div>
+            {{ form.csrf_token }}
+            {% for field in form if field.name != "csrf_token" %}
+            <div class="form-group">
+                {{ render_field(field, type='text') }}
+            </div>
+            {% endfor %}
+            <div>
+                <input type="submit" class="btn btn-primary btn-lg" value="Atualizar">
+                <a href="{{ url_for('bp_pessoa.lista') }}"><input type="button" class="btn btn-primary btn-lg" value="Voltar"></a>
+            </div><br>
+        </form>
+    </section>
+{% endblock %}

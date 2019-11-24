@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<div class="page-header">
+    <h1>Lista de Clientes</h1>
+</div>
+<div class="table-responsive-xl">
+    <table  class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Rua</th>
+                <th>Número</th>
+                <th>Bairro</th>
+                <th>Cidade</th>
+                <th>Estado</th>
+                <th>Telefone</th>
+                <th>CPF</th>
+                <th>E-mail</th>
+                <th>Excluir</th>
+                <th>Editar</th>
+            </tr>
+        </thead>
+        {% for pessoa in pessoas %}
+            <tbody>
+                <tr>
+                    <td>{{ pessoa._id }}</td>
+                    <td>{{ pessoa.nome }}</td>
+                    <td>{{ pessoa.rua }}</td>
+                    <td>{{ pessoa.numero }}</td>
+                    <td>{{ pessoa.bairro }}</td>
+                    <td>{{ pessoa.cidade }}</td>
+                    <td>{{ pessoa.estado }}</td>
+                    <td>{{ pessoa.fone }}</td>
+                    <td>{{ pessoa.cpf }}</td>
+                    <td>{{ pessoa.email }}</td>
+                    <td><a href="/excluir/{{ pessoa._id }}">Remover</a></td>
+                    <td><a href="/atualizar/{{ pessoa._id }}">Alterar</a></td>
+                </tr>
+            </tbody>
+        {% endfor %}
+    </table><br>
+    <a href="{{ url_for('bp_home.home') }}"><input type="button" class="btn btn-primary btn-lg" value="Voltar"></a>
+</div>    
+{% endblock %}
