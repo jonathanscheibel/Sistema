@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField
-from wtforms.validators import DataRequired
+from wtforms.validators import DataRequired, email
 
 
 class CadastroPessoa(FlaskForm):
@@ -12,7 +12,7 @@ class CadastroPessoa(FlaskForm):
     estado = StringField("Estado:", validators=[DataRequired()])
     fone = StringField("Fone:", validators=[DataRequired()])
     cpf = StringField("Cpf:", validators=[DataRequired()])
-    email = StringField("Email:", validators=[DataRequired()])
+    email = StringField("Email:", validators=[DataRequired(), email()])
 
     def insert_data(self, pessoa):
         self.nome.data = pessoa.nome
