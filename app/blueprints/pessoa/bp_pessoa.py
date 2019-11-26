@@ -22,7 +22,8 @@ def cadastrar():
 @bp_app.route("/lista")
 def lista():
     pessoas = Pessoa.query.all()
-    return render_template("lista.html", pessoas=pessoas)
+    if pessoas:
+        return render_template("lista.html", pessoas=pessoas)
 
 
 @bp_app.route("/atualizar/<int:id>", methods=["GET", "POST"])
