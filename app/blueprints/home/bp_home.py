@@ -5,6 +5,7 @@ bp_app = Blueprint("bp_home", __name__, template_folder='view')
 
 @bp_app.route("/")
 @bp_app.route("/home")
+@bp_app.route("/index")
 def home():
     return render_template("index.html")
 
