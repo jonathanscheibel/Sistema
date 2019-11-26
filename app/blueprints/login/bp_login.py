@@ -1,4 +1,4 @@
-from flask import render_template, request, redirect, url_for, Blueprint, flash
+from flask import render_template, request, redirect, url_for, Blueprint
 from flask_login import login_user, logout_user
 from app.ext.db import db
 from app.blueprints.login.model.user import User
@@ -25,16 +25,16 @@ def login():
         pwd = request.form['password']
         user = User.query.filter_by(email=email).first()
         if not user or not user.verify_password(pwd):
-            return redirect(url_for('login'))
+            return redirect('login')
         login_user(user)
-        return redirect(url_for('home'))
+        return redirect('home')
     return render_template('login.html')
 
 
 @bp_app.route('/logout')
 def logout():
     logout_user()
-    return redirect(url_for('login'))
+    return redirect('login')
 
 
 def configure(app):
