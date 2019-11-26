@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, redirect, url_for
 
 from app.ext.db import db
 from app.blueprints.pessoa.controller.cadastro import CadastroPessoa
-from app.blueprints.pessoa.model.tabela import Pessoa
+from app.blueprints.pessoa.model.pessoa import Pessoa
 
 bp_app = Blueprint("bp_pessoa", __name__, template_folder='view')
 

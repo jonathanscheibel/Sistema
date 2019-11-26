@@ -1,7 +1,8 @@
 from flask import Flask
-from app.ext import db, migrate
+from app.ext import db, migrate, session
 from app.blueprints.pessoa import bp_pessoa
 from app.blueprints.home import bp_home
+from app.blueprints.login import bp_login
 
 
 def create_app():
@@ -11,9 +12,11 @@ def create_app():
     # Extensions
     db.configure(app)
     migrate.configure(app)
+    session.configure(app)
 
     # Blueprints
     bp_home.configure(app)
     bp_pessoa.configure(app)
+    bp_login.configure(app)
 
     return app
