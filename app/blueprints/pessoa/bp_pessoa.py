@@ -43,7 +43,6 @@ def atualizar(id):
 @bp_app.route("/excluir/<int:id>")
 def excluir(id):
     pessoa = Pessoa.query.filter_by(_id=id).first()
-
     db.session.delete(pessoa)
     db.session.commit()
     return redirect(url_for("bp_pessoa.lista"))
