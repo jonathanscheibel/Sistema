@@ -17,9 +17,13 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String(128), nullable=False)
 
     def __init__(self, name, email, password):
+        self.id = None
         self.name = name
         self.email = email
         self.password = generate_password_hash(password)
+        self._is_authenticated = False
+        self._is_active = True
+        self._is_anonymous = False
 
     def verify_password(self, pwd):
         return check_password_hash(self.password, pwd)

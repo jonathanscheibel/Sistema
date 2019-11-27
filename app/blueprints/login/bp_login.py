@@ -1,4 +1,4 @@
-from flask import render_template, request, redirect, url_for, Blueprint
+from flask import render_template, request, redirect, Blueprint
 from flask_login import login_user, logout_user
 from app.ext.db import db
 from app.blueprints.login.model.user import User
