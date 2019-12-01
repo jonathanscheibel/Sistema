@@ -20,4 +20,5 @@ def create_app():
     bp_pessoa.configure(app)
     bp_login.configure(app)
 
+
     return app
