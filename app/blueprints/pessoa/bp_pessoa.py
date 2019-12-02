@@ -22,8 +22,7 @@ def cadastrar():
 @bp_app.route("/lista")
 def lista():
     pessoas = Pessoa.query.all()
-    if pessoas:
-        return render_template("lista.html", pessoas=pessoas)
+    return render_template("lista.html", pessoas=pessoas)
 
 
 @bp_app.route("/atualizar/<int:id>", methods=["GET", "POST"])
@@ -45,7 +44,7 @@ def excluir(id):
     pessoa = Pessoa.query.filter_by(_id=id).first()
     db.session.delete(pessoa)
     db.session.commit()
-    return redirect(url_for("bp_pessoa.lista"))
+    return redirect('/lista')
 
 
 def configure(app):

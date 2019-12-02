@@ -6,7 +6,7 @@
     <section class="container-center">
         <form action="{{ url_for('bp_pessoa.cadastrar') }}" method="post">
             <div class="page-header">
-                <h1>Cadastrar Cliente</h1>
+                <h1>Cadastrar Pessoa</h1>
             </div>
             {{ form.csrf_token }}
             {% for field in form if field.name != "csrf_token" %}

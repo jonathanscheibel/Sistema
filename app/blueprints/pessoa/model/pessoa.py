@@ -13,3 +13,7 @@ class Pessoa(db.Model):
     fone = db.Column(db.String)
     cpf = db.Column(db.String)
     email = db.Column(db.String)
+
+    @property
+    def id(self):
+        return self._id
