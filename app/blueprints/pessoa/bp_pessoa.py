@@ -18,7 +18,6 @@ def cadastrar():
         return redirect(url_for("bp_home.home"))
     return render_template("cadastro.html", form=form)
 
-
 @bp_app.route("/lista")
 def lista():
     pessoas = Pessoa.query.all()
