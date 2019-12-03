@@ -1,10 +1,10 @@
 from flask import render_template, request, redirect, Blueprint, flash, url_for
 from flask_login import login_user, logout_user
 from flask_mail import Message
-from app.ext.db import db
-from app.ext.email import mail
-from app.blueprints.login.model.user import User
-from app.ext.utils.strings import get_random_string
+from src.app.ext.db import db
+from src.app.ext.email import mail
+from src.app.blueprints.login.model.user import User
+from src.app.ext.utils.strings import get_random_string
 
 bp_app = Blueprint("bp_login", __name__, template_folder='view')
 
@@ -58,7 +58,8 @@ Por gentileza, acesse o link ao lado para redefini-la: http://localhost:8000/'''
             return redirect('login')
         else:
             flash("Este email é inválido ou não está cadastrado.")
-            return render_template('forgot_ask.html')
+            # return render_template('forgot_ask.html')
+            return redirect('login')
     else:
         return render_template('forgot_ask.html')
 

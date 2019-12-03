@@ -1,4 +1,4 @@
-from app.ext.db import db
+from src.app.ext.db import db
 
 
 class Pessoa(db.Model):
