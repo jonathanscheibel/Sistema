@@ -1,6 +1,6 @@
 Licença MIT
 
-Direitos autorais 2020 Jonathan Scheibel
+Direitos autorais 2020 Jonathan Scheibel de Morais - 13407089732
 
 É concedida permissão, gratuitamente, a qualquer pessoa que obtenha uma cópia
 deste software e arquivos de documentação associados (o "Software"), para lidar
