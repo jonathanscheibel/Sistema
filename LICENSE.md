@@ -1,4 +1,4 @@
-Licença MIT
+Licença MIT.
 
 Direitos autorais 2020 Jonathan Scheibel de Morais - 13407089732
 
