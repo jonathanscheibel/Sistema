@@ -1,4 +1,4 @@
-from app.ext.db import db
+from src.app.ext.db import db
 
 
 class Pessoa(db.Model):
@@ -13,3 +13,7 @@ class Pessoa(db.Model):
     fone = db.Column(db.String)
     cpf = db.Column(db.String)
     email = db.Column(db.String)
+
+    @property
+    def id(self):
+        return self._id
