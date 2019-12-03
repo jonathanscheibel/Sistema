@@ -1,5 +1,8 @@
 ## Sistema
-Sistema web 
+Para utilização de qualquer natureza:
+
+    jonathansmorais@gmail.com / jsmorais@protonmail.com 
+
 
 ## Instruções de utilização
   * Renomeie **.env.template** para **.env** e configure-o
