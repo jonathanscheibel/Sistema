@@ -17,7 +17,7 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String(128), nullable=False)
     hash_code = db.Column(db.String(256))
 
-    def __init__(self, name, email, password, hash_code):
+    def __init__(self, name, email, password, hash_code=''):
         self.id = None
         self.name = name
         self.email = email

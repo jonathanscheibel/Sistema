@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, redirect, url_for
 
-from src.app import db
+from src.app.ext.db import db
 from src.app.blueprints.pessoa.controller.cadastro import CadastroPessoa
 from src.app.blueprints.pessoa.model.pessoa import Pessoa
 
