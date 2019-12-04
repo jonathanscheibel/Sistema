@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template, redirect, url_for
+from flask_weasyprint import render_pdf
 
 from src.app.ext.db import db
 from src.app.blueprints.pessoa.controller.cadastro import CadastroPessoa
@@ -18,10 +19,17 @@ def cadastrar():
         return redirect(url_for("bp_home.home"))
     return render_template("cadastro.html", form=form)
 
+
 @bp_app.route("/lista")
-def lista():
+@bp_app.route("/lista_pessoas")
+def lista_pessoas():
     pessoas = Pessoa.query.all()
     return render_template("lista.html", pessoas=pessoas)
+
+
+@bp_app.route("/lista_pessoas_pdf")
+def lista_pessoas_pdf():
+    return render_pdf(url_for('bp_pessoa.lista_pessoas'))
 
 
 @bp_app.route("/atualizar/<int:id>", methods=["GET", "POST"])
