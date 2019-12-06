@@ -1,4 +1,6 @@
 ## Sistema
+[![Requirements Status](https://requires.io/github/jonathanscheibel/Sistema/requirements.svg?branch=master)](https://requires.io/github/jonathanscheibel/Sistema/requirements/?branch=master)
+
 Para utilização de qualquer natureza:
 
     jonathansmorais@gmail.com / jsmorais@protonmail.com 
