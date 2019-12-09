@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, redirect, url_for
-from flask_weasyprint import render_pdf
+from flask_weasyprint import render_pdf, HTML
 
 from src.app.ext.db import db
 from src.app.blueprints.pessoa.controller.cadastro import CadastroPessoa
@@ -29,7 +29,7 @@ def lista_pessoas():
 
 @bp_app.route("/lista_pessoas_pdf")
 def lista_pessoas_pdf():
-    return render_pdf(url_for('bp_pessoa.lista_pessoas'))
+    return render_pdf(HTML(string=lista_pessoas()))
 
 
 @bp_app.route("/atualizar/<int:id>", methods=["GET", "POST"])
